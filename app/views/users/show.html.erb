@@ -1,0 +1,24 @@
+<h1>User Table</h1>
+<ul>
+  <li><%= link_to "Edit", edit_user_path(@user) %></li>
+   <li><%= link_to "Delete", user_path(@user), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+<table border = 1>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Age</td>
+    <td>Ocuupation</td>
+  </tr>  
+  <tr>
+    <td><%= @user.id %></td>
+    <td><%= @user.name%></td>
+    <td><%= @user.email%></td>
+    <td><%= @user.age%> </td>
+    <td><%= @user.occupation%></td>
+  </tr>
+</table>

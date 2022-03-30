@@ -1,0 +1,32 @@
+<h1>Users</h1>
+<%= link_to "Add New User", new_user_path %>
+<br><br>
+<table border="10" frame="VOID" rules="ALL">
+  <tr>
+    <th>User Name</th>
+    <th> Action </th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td>
+      <%= link_to user.name, user %>
+    </td>
+    <td>
+      <ul>
+        <li>
+          <%= link_to "Edit", edit_user_path(user) %>
+        </li>
+        <li>
+          <%= link_to "Delete", user_path(user), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }%>
+        </li>
+      </ul>
+    </td>
+    
+  </tr>
+    
+  <% end %>
+
+</table>

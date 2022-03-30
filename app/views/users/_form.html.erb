@@ -1,0 +1,45 @@
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @user.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :email_confirmation %><br>
+    <%= form.text_field :email_confirmation %>
+    <% @user.errors.full_messages_for(:email_confirmation).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :age %><br>
+    <%= form.number_field :age %>
+    <% @user.errors.full_messages_for(:age).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :occupation %><br>
+    <%= form.text_field :occupation %>
+    <% @user.errors.full_messages_for(:occupation).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
